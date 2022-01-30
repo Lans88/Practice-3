@@ -1,0 +1,65 @@
+import Foundation
+
+//Task 1: создать 10 словарей, в одном из них должн ыбыть месяца на русском, в другом на английском, разные типы данных в других словарях.
+var mounthRus = [1: "Январь", 2: "Февраль", 3: "Март", 4: "Апрель", 5: "Май", 6: "Июнь", 7: "Июль", 8: "Август", 9: "Сентябрь", 10: "Октбярь", 11: "Ноябрь", 12: "Декабрь"]
+var mounthEng = [1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr", 5: "May", 6: "Jun", 7: "Jul", 8: "Aug", 9: "Sep", 10: "Ort", 11: "Nov", 12: "Dec"]
+var dictValue = [1: 1, 2: 2, 3: 5, 4: 8]
+var dictValueBool = [true: "истина", false: "ложь"]
+var dictValue2 = ["один": 1, "два": 2, "три": 3 ]
+print(mounthRus.keys)
+print(mounthRus.values)
+print(mounthEng.keys)
+print(mounthEng.values)
+print(dictValue.keys)
+print(dictValue.values)
+print(dictValueBool.keys)
+print(dictValueBool.values)
+print(dictValue2.keys)
+print(dictValue2.values)
+
+var emptyDict: [Int: Int] = [:]
+if emptyDict.isEmpty {
+    emptyDict.updateValue(1, forKey: 1)
+}
+print(emptyDict)
+emptyDict.updateValue(2, forKey: 2)
+print(emptyDict)
+
+var carsDict: [String: String] = [:]
+carsDict.updateValue("BMW", forKey: "Иномарка")
+print(carsDict)
+carsDict.updateValue("Granta", forKey: "Отечественная")
+print(carsDict)
+print(carsDict.values)
+carsDict.removeValue(forKey: "Иномарка")
+print(carsDict)
+
+//Продвинутый уровень
+//Task 1: Создать словарь где ключ фамилия, значение приветствие
+var solders = ["Иванов": "Здрасьте", "Петров": "Приветики", "Сидоров": "Здравия желаю, товарищ Генерал!"]
+
+//Task 2: Пройтись циклом по ключам и распечатать фамилию солдата
+for _ in solders {
+    print(solders.keys)
+}
+
+//Task 3: сделать тоже самое со значениями
+for _ in solders {
+    print(solders.values)
+}
+
+//Task 4: Отсортировать ключи в алфавитном порядке
+var sortSolders = solders.keys.sorted()
+print(sortSolders)
+// Task 5: Сделать проверку ключей и назвать специальности солдатов
+for _ in solders {
+    if solders.keys.contains("Иванов") {
+        print("Иванов у нас снайпер")
+    }
+    if solders.keys.contains("Петров") {
+        print("Петров у нас сапер")
+    }
+    if solders.keys.contains("Сидоров") {
+        print("Сидоров у нас из мотострелковой бригады спецназа")
+    }
+}
